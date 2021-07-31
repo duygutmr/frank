@@ -1,0 +1,22 @@
+header {
+    background-image: url(../svg/rectangle.svg),linear-gradient(to bottom, #05233d, rgba(5, 35, 61, 0) 100%);
+    
+    .navigation {
+        padding-top: 34px;
+        &_unorder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            li {
+                a {
+                    text-decoration: none;
+                    color: #fff;
+
+                }
+            }
+        }
+    }
+}

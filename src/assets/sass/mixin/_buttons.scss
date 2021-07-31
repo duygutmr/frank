@@ -1,0 +1,21 @@
+/*
+  button-variant(
+    background, border, color,
+    hover-background, hover-border, hover-color,
+    active-background, active-border, active-color
+  )
+*/
+
+.btn {
+  &-primary {
+    @include button-variant($primary, $primary, $white, $white, $primary, $primary, #9bb1be, #9bb1be, $white);
+  }
+
+  &-secondary {
+    @include button-variant($secondary, $secondary, $white, $white, $secondary, $secondary, #fd9999, #fd9999, $white);
+  }
+
+  &-default {
+    @include button-variant($default, #dcdcdc, $primary, #f8f8f8, #9bb1be, $primary, #f8f8f8, #dcdcdc, $primary);
+  }
+}

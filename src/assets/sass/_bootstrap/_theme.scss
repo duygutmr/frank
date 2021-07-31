@@ -1,0 +1,21 @@
+$primary: #063d5d;
+$secondary: #ff0000;
+$default: #ffffff;
+$black: #000000;
+$gray: #dcdcdc;
+$light-gray: #f8f8f8;
+$light-blue: #c7eafb;
+
+$custom-colors: (
+  "default": $default,
+  "black": $black,
+  "gray": $gray,
+  "light-gray": $light-gray,
+  "light-blue": $light-blue,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$body-color: $black;
+
+$border-radius: 0px;
