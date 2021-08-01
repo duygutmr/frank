@@ -1,8 +1,8 @@
 .our_values {
     background-image: linear-gradient(342deg, #ffa409 51%, #ff8808 18%);
-    height: 738px;
     padding-top: 56px;
     margin-bottom: 100px;
+    padding-bottom: 50px;
     overflow: hidden;
     &-content {
         display: flex;
@@ -163,5 +163,8 @@
         }
       }
     }
+  }
+  .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+    margin-top: 0;
   }
 }
