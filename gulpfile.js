@@ -91,7 +91,7 @@ function html() {
 }
 
 function htmlPages(){
-   return src("src/pages/*.html")
+   return src("src/*.html")
        .pipe(include())
        .pipe(nunjucksRender({
            path: [
@@ -100,7 +100,7 @@ function htmlPages(){
                'src/templates/components',
            ] // String or Array
        }))
-       .pipe(dest('dist/pages'))
+       .pipe(dest('dist'))
        ;
 }
 
