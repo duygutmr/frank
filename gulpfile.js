@@ -63,18 +63,6 @@ function images() {
         ;
 }
 
-function media() {
-    return src("src/assets/media/**/*.*")
-        .pipe(dest("dist/assets/media/"))
-        ;
-}
-
-function plugins() {
-    return src("src/assets/plugins/**/*.*")
-        .pipe(dest("dist/assets/plugins/"))
-        ;
-}
-
 function svg() {
     return src("src/assets/svg/**/*.*")
         .pipe(image())
@@ -89,12 +77,6 @@ function js() {
         .pipe(dest('dist/assets/js'));
 }
 
-function vendors() {
-    return src("src/vendors/**/*.*")
-        .pipe(dest("dist/vendors/"))
-        ;
-}
-
 function html() {
     return src("src/*.html")
         .pipe(include())
@@ -106,21 +88,6 @@ function html() {
             ] // String or Array
         }))
         .pipe(dest('dist'));
-}
-
-
-function htmlSubSite(){
-    return src("src/subSite/*.html")
-        .pipe(include())
-        .pipe(nunjucksRender({
-            path: [
-                'src/',
-                'src/templates/',
-                'src/templates/components',
-            ] // String or Array
-        }))
-        .pipe(dest('dist/subSite'))
-        ;
 }
 
 function htmlPages(){
@@ -146,7 +113,7 @@ function watchCSS(){
 }
 
 function watchHTML(){
-    return watch("src/**/*.html", series(html,htmlSubSite,htmlPages))
+    return watch("src/**/*.html", series(html,htmlPages))
 }
 
 function watchImages(){
@@ -161,18 +128,6 @@ function watchJS(){
     return watch("src/assets/js/**/*.*", series(js))
 }
 
-function watchMedia(){
-    return watch("src/assets/media/**/*.*", series(media))
-}
-
-function watchPlugins(){
-    return watch("src/assets/plugins/**/*.*", series(plugins))
-}
-
-
-function watchFiles() {
-    return watch("src/**/*.*", series(sass, html, htmlSubSite , htmlPages, fonts, js,css, vendors, media, plugins))
-}
 
 function serve(){
     var server = gls.static("dist",4545);
@@ -183,11 +138,9 @@ function serve(){
     watchImages();
     watchSVG();
     watchJS();
-    watchMedia();
-    watchPlugins();
 }
 
 
-exports.default = series(sass, fonts, js, vendors, html, htmlSubSite,htmlPages, images, svg, css, media, plugins);
-exports.lite = series(sass, fonts, js, vendors, html, htmlSubSite,htmlPages, css, media, plugins);
+exports.default = series(sass, fonts, js, html,htmlPages, images, svg, css);
+exports.lite = series(sass, fonts, js, html,htmlPages, css);
 exports.serve = series(serve);

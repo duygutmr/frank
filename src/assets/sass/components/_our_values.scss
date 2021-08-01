@@ -28,21 +28,6 @@
             text-align: center;
         }
     }
-    
-    .scheduler-col {
-      z-index: 3;
-      border: 0px;
-      position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left:80%;
-          right:-3000px;
-          z-index: -1;
-        }
-    }
 
       .carousel-box {
         width: 235px;
@@ -108,6 +93,7 @@
          &.our_values-images {
            display: block;
            margin-top: 41px;
+           height: auto;
          }
         }
       }
