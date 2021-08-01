@@ -7,10 +7,11 @@ $('.owl-carousel').owlCarousel({
     navText: ["<img src='../assets/svg/left-arrow.svg'>","<img src='../assets/svg/right-arrow.svg'>"],
     responsive:{
         0:{
-            items:1
+            items:1,
+            center:true,
         },
         600:{
-            items:3
+            items:3,
         },
         1000:{
             items:6

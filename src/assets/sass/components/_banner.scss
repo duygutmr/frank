@@ -1,14 +1,18 @@
 .banner {
-     background: url(../img/bitmap.png), linear-gradient(to bottom, rgba(5, 35, 61, 0), #061d31 38%);
+     background: url(../img/bitmap.png), linear-gradient(to bottom, rgba(5, 35, 61, 0), #061d31 0%);
+     background-repeat: no-repeat;
      padding-bottom: 200px;
+     padding-top: 228px;
      &-title {
          font-size: 42px;
         font-weight: 300;
         text-align:center;
+        color: #fff;
         &-second {
             font-size: 45px;
             font-weight: bold;
             text-align:center;
+            color: #fff;
         }
      }
      &-boxes {
@@ -76,6 +80,34 @@
         }
         &:hover {
             color: #fff;
+        }
+    }
+}
+
+
+@media screen and (max-width: 415px) {
+    .banner {
+        background-position: center;
+        padding-top: 128px;
+        &-title {
+            font-size: 33.6px;
+            &-second {
+                font-size: 35.8px;
+                width: 50%;
+                margin: auto;
+            }
+        }
+        &-boxes {
+            &-first,
+            &-second,
+            &-third,
+            &-fourth {
+                height: 154px;
+                padding: 23px 0 20px 20px;
+                h3 {
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

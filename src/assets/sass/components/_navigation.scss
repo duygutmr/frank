@@ -1,8 +1,8 @@
 header {
-    background-image: url(../svg/rectangle.svg),linear-gradient(to bottom, #05233d, rgba(5, 35, 61, 0) 100%);
-    
+    background-image: url(../svg/rectangle.svg),linear-gradient(to bottom, rgba(5, 35, 61, 0), #061d31 100%);
     .navigation {
         padding-top: 34px;
+        padding-bottom: 10px;
         &_unorder {
             display: flex;
             justify-content: space-between;
@@ -18,5 +18,37 @@ header {
                 }
             }
         }
+        &_logo-hamburger {
+            display: none;
+        }
+        &_logo-mobile {
+            display: none;
+        }
     }
 }
+@media screen and (max-width: 768px) {
+    header {
+        .navigation {
+            &_logo-hamburger {
+                display: block;
+            }
+            &_hide {
+                display: none;
+            }
+            &_logo {
+                display: none;
+            }
+            &_logo-mobile {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (max-width: 415px) {
+    header {
+        .navigation {
+            padding-top: 20px;
+        }
+    }
+}
+

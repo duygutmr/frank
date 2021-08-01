@@ -2,6 +2,7 @@
     background-image: linear-gradient(342deg, #ffa409 51%, #ff8808 18%);
     height: 738px;
     padding-top: 56px;
+    margin-bottom: 100px;
     overflow: hidden;
     &-content {
         display: flex;
@@ -20,11 +21,11 @@
             letter-spacing: -0.2px;
             margin-top: 15px;
             margin-bottom: 0;
-    
         }
         &-title,
         &-text {
             color: #fff;
+            text-align: center;
         }
     }
     
@@ -95,12 +96,15 @@
           line-height: 1.4;
           color: #6b6b6b;
           text-align: center;
+          padding: 0 25px 0 25px;
         }
         .item {
          display: flex;
          justify-content: center;
          align-items: center;
          flex-direction: column;
+         width: 235px;
+         height: 387px;
          &.our_values-images {
            display: block;
            margin-top: 41px;
@@ -132,4 +136,32 @@
 
 .owl-dots {
   display: none;
+}
+
+@media screen and (max-width: 415px) {
+  .our_values {
+    padding-top: 44px;
+    &-content {
+      &-title {
+        font-size: 36px;
+      }
+    }
+    .carousel-box {
+      height: 319px;
+      .item {
+        height: 319px;
+        &.our_values-images {
+          margin-top: 33px;
+        }
+      
+      }
+      &.fourth {
+        height: 347px;
+        img {
+          height: 181px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
